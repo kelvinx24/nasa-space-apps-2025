@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flask Visualization</title>
+    <title>Asteroid Impact Simulator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Flask + D3.js Example</h1>
+    <h1>Asteroid Impact Simulator</h1>
+
+    <!-- Input form -->
+    <form id="impact-form">
+        <label>Mass (kg): <input type="number" id="mass" value="1e9"></label><br>
+        <label>Velocity (m/s): <input type="number" id="velocity" value="20000"></label><br>
+        <label>Impact Angle (°): <input type="number" id="angle" value="45"></label><br>
+        <button type="submit">Simulate Impact</button>
+    </form>
+
+    <!-- Visualization -->
     <div id="viz"></div>
 
-    <!-- Load D3.js -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Custom JS -->
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
